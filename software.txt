@@ -1,0 +1,15 @@
+dust
+picom
+bat
+feh
+kitty
+ncspot
+python-psutil
+google-chrome-stable
+qutebrowser
+rofi
+btop
+neofetch
+nvim
+ranger
+mpv
