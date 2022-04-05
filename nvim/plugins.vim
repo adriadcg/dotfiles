@@ -10,13 +10,17 @@ call plug#begin('~/.config/nvim/plugged')
 " ============================================= 
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
+" Signify uses the sign column to indicate added, modified and removed
+" lines in a file that is managed by a version control system (VCS)
+" https://github.com/mhinz/vim-signify
 Plug 'mhinz/vim-signify'
-Plug 'yggdroot/identline'
+Plug 'Yggdroot/indentLine'
 Plug 'scrooloose/nerdcommenter'
-
+Plug 'neovim/nvim-lspconfig'
+Plug 'ray-x/lsp_signature.nvim'
 " Highlight UI elements based on current mode
 " https://github.com/mvllow/modes.nvim
-Plug 'vllow/modes.nvim'
+Plug 'mvllow/modes.nvim'
 
 " ============================================= 
 "                  Markdown
@@ -54,14 +58,15 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'alvan/vim-closetag'
 Plug 'tpope/vim-surround'
 " Autocomplete
+" https://github.com/SirVer/ultisnips
 Plug 'sirver/ultisnips'
 Plug 'neoclide/coc.nvim', {'branch':'release'}
-" Unicode
-Plug 'chrisbra/unicode.vim'
+
 " Test
 Plug 'tyewang/vimux-jest-test'
 Plug 'janko-m/vim-test'
 
+Plug 'edluffy/hologram.nvim'
 
 " ============================================= 
 "            Working with buffers

@@ -39,3 +39,5 @@ qtile/settings/__pycache__
 rofi/config.rasi_
 rofi/config_bk.rasi
 rofi/powermenu
+gh/*
+qutebrowser/qsettings

@@ -39,7 +39,7 @@ nnoremap <leader>b <cmd>Telescope buffers<CR>
 " Mover with 2 characters searchs
 nmap <leader>m <Plug>(easymotion-s2) 
 " Show Tree file view
-nmap <leader>t <cmd>edit .<CR> 
+nmap <leader>ff <cmd>Telescope find_files<CR> 
 " Show Color Highlith
 nmap <leader>ch <cmd>ColorHighlight<CR>
 

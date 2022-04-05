@@ -90,8 +90,8 @@ def parseAppName(name):
         'Google Chrome': '  ',
         'NVIM': '  ',
         'ncspot': '  ',
-        'Personalizar apariencia y comportamiento': '  '
-        'WhatsApp': '  '
+        'Personalizar apariencia y comportamiento': '  ',
+        'WhatsApp': '  '  
     }
     name = name.split("-")[-1].strip()
     if name in apps_to_rename:
@@ -193,7 +193,7 @@ primary_widgets = fullbar(
                     'foreground': colors['color4']
                 }
             },
-           {
+            {
                 'widget': widget.Wallpaper,
                 'params': {
                     'foreground': colors['text'] ,

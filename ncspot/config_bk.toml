@@ -1,0 +1,23 @@
+use_nerdfont = true
+flip_status_indicators = true
+notify = true
+cover_max_scale = 2
+
+[theme]
+background = "#1A1826"
+primary = "#D9E0EE"
+secondary = "black"
+title = "#F8BD96"
+playing = "#1A1826"
+playing_selected = "#F28FAD"
+playing_bg = "#F8BD96"
+highlight = "#161320"
+highlight_bg = "#DDB6F2"
+error = "#D9E0EE"
+error_bg = "red"
+statusbar = "#191414"
+statusbar_progress = "#F8BD96"
+statusbar_bg = "#F8BD96"
+cmdline = "#D9E0EE"
+cmdline_bg = "#191414"
+search_match = "light red"

@@ -17,8 +17,8 @@ set guifont=FiraCore\ Nerd\ Font\10
 set termguicolors " Activate true colors on terminal
 " set background=dark " Background color
 " Theme config
-colorscheme nightfox 
-" onehalfdark
+colorscheme onehalfdark
+" nightfox 
 " let g:airline_theme='onehalfdark'
 " let g:lightline = { 'colorscheme': 'onehalfdark' }
 
@@ -42,6 +42,9 @@ set hidden " Enable buffer change without save before
 
 " FILE BROWSING:
 " Tweaks for browsing
+let g:netrw_keepdit=0
+let g:netrw_winsize=25
+let g:netrw_fastbrowse=0
 let g:netrw_banner=0        " disable annoying banner
 let g:netrw_browse_split=4  " open in prior window
 let g:netrw_altv=1          " open splits to the right

@@ -10,6 +10,7 @@
 
 from libqtile.config import Key
 from libqtile.command import lazy
+from libqtile import layout
 from util import local_bin
 from datetime import datetime
 from .apps import launchApp # Go to define defaul apps
@@ -18,7 +19,7 @@ from .ncspot import ncspot_cmds
 mod = "mod4"
 keys = [Key(key[0], key[1], *key[2:]) for key in [
     # ------------ Window Configs ------------
-    # Switch between windows in current stack pane
+    # Switch between windows in current stack pane l
     ([mod], "j", lazy.layout.down()),
     ([mod], "k", lazy.layout.up()),
     ([mod], "h", lazy.layout.left()),
@@ -30,6 +31,8 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     ([mod, "shift"], "k", lazy.layout.shuffle_up()),
     ([mod, "shift", "control"], "h", lazy.layout.swap_column_left()),
     ([mod, "shift", "control"], "l", lazy.layout.swap_column_right()),
+    # MonadThreeCol
+    ([mod, "control"], "m", lazy.layout.swap_main()),
     # Grow window
     ([mod, "control"], "h", lazy.layout.grow_left()),
     ([mod, "control"], "l", lazy.layout.grow_right()),
