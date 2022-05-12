@@ -7,3 +7,4 @@ paplay ~/starting.ogg
 xset s off -dpms
 # Open ncspot on kitty therminal
 kitty -e ncspot &
+blueman &

@@ -36,7 +36,7 @@ mainbox {
 inputbar {
     children: [entry];
     background-color: @bg-col2;
-    border-radius: 12px 12px 0px 0px;
+    /* border-radius: 12px 12px 0px 0px; */
     padding: 9px;
 }
 
@@ -58,12 +58,12 @@ entry {
     text-color: @fg-col3;
     text-align: center;
     background-color: @bg-col3;
-    border-radius: 9px;
+    /* border-radius: 9px; */
 }
 
 listview {
     border: 0px 0px 0px;
-    border-radius: 0px 0px 12px 12px;
+    /* border-radius: 0px 0px 12px 12px; */
     padding: 9px;
     margin: -2px 0px 0px 0px;
     columns: 2;
@@ -93,7 +93,7 @@ mode-switcher {
   }
 
 button {
-    padding: 10px 5px;
+    padding: 5px 5px;
     background-color: @bg-col;
     text-color: @fg-col;
     vertical-align: 0.5; 
@@ -105,5 +105,5 @@ button selected {
   background-color: @bg-col2;
   text-color: @fg-col2;
   font-weight: bold;
-  border-radius: 0px 0px 12px 12px;
+  /* border-radius: 0px 0px 12px 12px; */
 }

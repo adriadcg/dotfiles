@@ -76,16 +76,16 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
 
     # ------------ Hardware Configs ------------
     # Volume
-    ([], "XF86AudioLowerVolume", lazy.spawn(
+    ([mod, "shift"], "z", lazy.spawn(
         "pactl set-sink-volume @DEFAULT_SINK@ -5%"
     )),
-    ([], "XF86AudioRaiseVolume", lazy.spawn(
+    ([mod, "shift"], "x", lazy.spawn(
         "pactl set-sink-volume @DEFAULT_SINK@ +5%"
     )),
-    ([], "XF86AudioMute", lazy.spawn(
+    ([mod, "shift"], "c", lazy.spawn(
         "pactl set-sink-mute @DEFAULT_SINK@ toggle"
     )),
-    ([], "XF86AudioNext", ncspot_cmds["Next"]),
-    ([], "XF86AudioPrev", ncspot_cmds["Previous"]),
-    ([], "XF86AudioPlay", ncspot_cmds["PlayPause"]),
+    ([mod], "x", ncspot_cmds["Next"]),
+    ([mod], "z", ncspot_cmds["Previous"]),
+    ([mod], "c", ncspot_cmds["PlayPause"]),
 ]]

@@ -1,19 +1,12 @@
-from libqtile.command import lazy
 from libqtile import widget
 from .theme import colors
 from .ncspot import ncspot_cmds
 from .apps import launchApp
-# Get the icons at https://www.nerdfonts.com/cheat-sheet (you need a Nerd Font)
 
-def base(foreground=colors['text'], background=colors['dark']):
-    return {
-        'foreground': foreground,
-        'background': background
-    }
-
-def icon(foreground=colors['text'], background=colors['dark'], fontsize=14, text="?",padding=3, fmt='{}'):
+def icon(foreground=colors['text'], background=colors['background'], fontsize=14, text="?",padding=3, fmt='{}'):
     return widget.TextBox(
-        **base(foreground, background),
+        foreground=foreground,
+        background=background,
         fontsize=fontsize,
         text=text,
         padding=padding,
@@ -21,14 +14,15 @@ def icon(foreground=colors['text'], background=colors['dark'], fontsize=14, text
     )
 
 
-def powerline(foreground=colors['text'], background=colors['dark'], tp="split", padding=0, size=22):
+def powerline(foreground=colors['text'], background=colors['background'], tp="split", padding=0, size=22):
     types = {
                 "split": {"icon":"", "font": "MesloLGS NF"},
                 "start": {"icon":"", "font": 'JetBrainsMono Nerd Font'},
                 "end": {"icon":"", "font": 'JetBrainsMono Nerd Font'},
             }
     return widget.TextBox(
-        **base(foreground, background),
+        foreground=foreground,
+        background=background,
         text=types[tp]["icon"], 
         fontsize=size,
         padding=padding,
@@ -86,16 +80,16 @@ def action_icon(icon=' ? ', foreground=colors['text'], callbacks={}, fontsize=14
     }
 
 def parseAppName(name):
-    apps_to_rename = {
-        'Google Chrome': '  ',
-        'NVIM': '  ',
-        'ncspot': '  ',
-        'Personalizar apariencia y comportamiento': '  ',
-        'WhatsApp': '  '  
-    }
+   #   apps_to_rename = {
+        #  'Google Chrome': '  ',
+        #  'NVIM': '  ',
+        #  'ncspot': '  ',
+        #  'Personalizar apariencia y comportamiento': '  ',
+        #  'WhatsApp': '  '
+    #  }
     name = name.split("-")[-1].strip()
-    if name in apps_to_rename:
-        name = apps_to_rename[name]
+#      if name in apps_to_rename:
+        #  name = apps_to_rename[name]
 
     return name 
 
@@ -104,7 +98,7 @@ primary_widgets = fullbar(
         [
             action_icon(
             icon="<span weight='bold'>ADR </span>",# ADR
-            foreground=colors['dark'],
+            foreground=colors['light'],
             callbacks={
                 'Button1': launchApp["apps_menu"],
                 'Button3': launchApp["system_info"]
@@ -113,21 +107,21 @@ primary_widgets = fullbar(
         {
             'widget': widget.GroupBox,
             'params': {
-                'foreground': colors['dark'],
-                'active': colors['dark'],
-                'inactive': colors['white'],
+                'foreground': colors['background'],
+                'active': colors['color2'],
+                'inactive': colors['light'],
                 'highlight_method': 'line',
-                'highlight_color': colors['color1'],
+                'highlight_color': colors['color8'],
                 #  'block_highlight_text_color': colors['color2'],
                 #  'urgent_alert_method': 'border',
                 #  'urgent_border': colors['urgent'],
-                #  'this_current_screen_border': colors['focus'],
+                'this_current_screen_border': colors['focus'],
                 'fontsize': 14,
-                #  'this_screen_border':colors['dark'],
+                #  'this_screen_border':colors['background'],
                 'markup': True,
                 'fmt': '<span weight="heavy">{}</span>',
-#                  'other_current_screen_border':colors['dark'],
-                #  'other_screen_border':colors['dark'],
+#                  'other_current_screen_border':colors['background'],
+                #  'other_screen_border':colors['background'],
                 'margin': 3,
             }
         }
@@ -136,11 +130,11 @@ primary_widgets = fullbar(
             'widget': widget.TaskList,
             'params': {
                 'foreground': colors['text'],
-                'icon_size': 0,
+                'icon_size': 16,
                 'fontsize': 16,
                 'highlight_method': 'block',
                 'margin': 0,
-                'border': colors['dark'],
+                'border': colors['background'],
                 'padding_y': 2,
                 'markup_focused': "<span color='"+colors['active']+"' weight='heavy'>{}</span>",
                 'markup_normal': "<span weight='bold'>{}</span>",
@@ -152,7 +146,7 @@ primary_widgets = fullbar(
         }],
         [
             action_icon(icon='玲',callbacks={'Button1': ncspot_cmds['Previous']}),
-            action_icon(icon='', foreground=colors['green'],callbacks={'Button1': ncspot_cmds['PlayPause']}),
+            action_icon(icon='', foreground=colors['color2'],callbacks={'Button1': ncspot_cmds['PlayPause']}),
             {
                 'widget': widget.Mpris2,
                 'params': {
@@ -207,7 +201,7 @@ primary_widgets = fullbar(
             {
                 'widget': widget.QuickExit,
                 'params': {
-                    'default_text':'  ',
+                    'default_text':'  ',
                     'countdown_format':'{}',
                     'countdown_start':1,
                     'padding': 3,
@@ -216,7 +210,7 @@ primary_widgets = fullbar(
             },
         ],
     ],
-    [colors['color1'], colors['dark'], colors['dark'], colors['dark']],
+    [colors['color8'], colors['background'], colors['background'], colors['background']],
 )
 
 widget_defaults = {

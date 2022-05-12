@@ -17,18 +17,20 @@ set guifont=FiraCore\ Nerd\ Font\10
 set termguicolors " Activate true colors on terminal
 " set background=dark " Background color
 " Theme config
-colorscheme onehalfdark
+colorscheme tokyonight 
 " nightfox 
 " let g:airline_theme='onehalfdark'
 " let g:lightline = { 'colorscheme': 'onehalfdark' }
 
 " Internal visualization config
-set nowrap  " Disable line separation
+set wrap  " Disable line separation
 set cursorcolumn " Highlight actual column
 set cursorline " Highlight actual line
-
 set colorcolumn=120 " Show column with 120 characters limit
-
+set foldmethod=marker
+set foldnestmax=10
+set nofoldenable
+set foldlevel=2
 " Identation to 4 spaces
 set tabstop=4
 set shiftwidth=4

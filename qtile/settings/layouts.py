@@ -16,7 +16,7 @@ layout_conf = {
 }
 
 layout_monadthree = layout_conf.copy()
-layout_monadthree['margin'] = 22
+layout_monadthree['margin'] = 30
 
 layouts = [
     layout.Columns(num_columns=4, **layout_conf),

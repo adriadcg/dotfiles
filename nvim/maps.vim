@@ -6,11 +6,11 @@
 
 let g:mapleader = ' ' " Define space like leader key
 " Save file <leader> + s
-nnoremap <leader>w <cmd>w<CR>
+nnoremap <leader>w :w<CR>
 " Open init.vim file
-nnoremap <leader>e <cmd>e $MYVIMRC<CR> 
+nnoremap <leader>e :e $MYVIMRC<CR> 
 " Save and quit
-nnoremap <leader>wq <cmd>wq<CR> 
+nnoremap <leader>wq :wq<CR> 
 " Use <leader> + y to copy at clipboard
 vnoremap <leader>y "+y
 nnoremap <leader>y "+y
@@ -27,32 +27,30 @@ vnoremap <leader>P "+P
 
 " Buffer
 " Move to next buffer
-nnoremap <leader>l <cmd>bnext<CR> 
+nnoremap <leader>l :bnext<CR> 
 " Move to previus buffer
-nnoremap <leader>h <cmd>bprevious<CR> 
+nnoremap <leader>h :bprevious<CR> 
 " Close current buffer
-nnoremap <leader>q <cmd>bdelete<CR>
+nnoremap <leader>q :bdelete<CR>
 " Show all buffers
-nnoremap <leader>b <cmd>Telescope buffers<CR> 
-" map <leader>f <cmd>find
+nnoremap <leader>b :Telescope buffers<CR> 
+" map <leader>f :find
 " Pluggins
 " Mover with 2 characters searchs
 nmap <leader>m <Plug>(easymotion-s2) 
 " Show Tree file view
-nmap <leader>ff <cmd>Telescope find_files<CR> 
+nmap <leader>t :NvimTreeToggle<CR>
+nmap <leader>ff :Telescope find_files<CR> 
 " Show Color Highlith
-nmap <leader>ch <cmd>ColorHighlight<CR>
+nmap <leader>ch :ColorHighlight<CR>
 
 " Split resize
 nnoremap <leader>> 10:<C-w>>
 nnoremap <leader>< 10:<C-w><
 
 "
-" map <leader>f <cmd>Files<CR>
+" map <leader>f :Files<CR>
 
 " Faster scrolling
 nnoremap <C-j> 10<C-e>
 nnoremap <C-k> 10<C-y>
-
-" Unicode vim
-map <leader>u <cmd>UnicodeSearch! 
